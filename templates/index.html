@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Display Post</title>
+    <title>受け取ったデータ</title>
   </head>
   <body>
-    <h1>Posted Text:</h1>
-    <p>{{ text }}</p>
+    <h1>受け取ったデータ</h1>
+    {% if data %}
+    <ul>
+      {% for key, value in data.items() %}
+      <li>{{ key }}: {{ value }}</li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>データがありません。</p>
+    {% endif %}
   </body>
 </html>
