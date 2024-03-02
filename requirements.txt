@@ -18,6 +18,10 @@ flask==3.0.2
     # via
     #   -r requirements.lock
     #   receive-post
+gunicorn==21.2.0
+    # via
+    #   -r requirements.lock
+    #   receive-post
 itsdangerous==2.1.2
     # via
     #   -r requirements.lock
@@ -31,6 +35,10 @@ markupsafe==2.1.5
     #   -r requirements.lock
     #   jinja2
     #   werkzeug
+packaging==23.2
+    # via
+    #   -r requirements.lock
+    #   gunicorn
 werkzeug==3.0.1
     # via
     #   -r requirements.lock

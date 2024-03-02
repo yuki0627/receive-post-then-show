@@ -21,3 +21,5 @@ curl -X POST http://localhost:5000/test -H "Content-Type: application/json" -d '
 ```sh
 curl -X POST  https://d674-122-210-136-202.ngrok-free.app/test -H "Content-Type: application/json" -d '{"from":"ngrok", "text":"hoge"}'
 ```
+
+pip-compile --output-file requirements.txt requirements.lock
