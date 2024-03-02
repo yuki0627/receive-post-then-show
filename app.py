@@ -20,4 +20,4 @@ def display_data():
     return render_template("index.html", received_data_list=received_data_list)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
