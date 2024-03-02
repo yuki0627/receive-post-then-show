@@ -3,24 +3,24 @@ from flask import Flask, request, render_template_string,render_template
 app = Flask(__name__)
 
 # メモリにデータを保存するための変数
-received_data = {}
+received_data_list = []
 
 @app.route('/test', methods=['POST'])
 def test_endpoint():
-    global received_data
+    global received_data_list
     # リクエストからパラメータを取得
     # data = request.form.to_dict()  # formデータの場合
     data = request.json  # JSONデータの場合
-    received_data = data  # 受け取ったデータをメモリに保存
+    received_data_list.append(data)
     print(data)
-    print(received_data)
+    print(received_data_list)
     return "パラメータを受け取りました。"
 
 @app.route('/')
 def display_data():
-    global received_data
-    print(received_data)
-    return render_template("index.html", data=received_data)
+    global received_data_list
+    print(received_data_list)
+    return render_template("index.html", received_data_list=received_data_list)
 
 if __name__ == '__main__':
     app.run(debug=True)

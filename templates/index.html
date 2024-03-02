@@ -5,11 +5,11 @@
   </head>
   <body>
     <h1>受け取ったデータ</h1>
-    {% if data %}
+    {% if received_data_list %}
     <ul>
-      {% for key, value in data.items() %}
+      {% for data in received_data_list %} {% for key, value in data.items() %}
       <li>{{ key }}: {{ value }}</li>
-      {% endfor %}
+      {% endfor %} {% endfor %}
     </ul>
     {% else %}
     <p>データがありません。</p>
